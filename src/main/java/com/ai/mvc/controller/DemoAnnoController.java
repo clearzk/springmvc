@@ -17,6 +17,9 @@ public class DemoAnnoController {
         return "url:" + request.getRequestURI() + " can access";
     }
 
+
+//    参数绑定
+
     @RequestMapping(value = "/pathvar/{str}",produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String demoPathBVar(@PathVariable String str, HttpServletRequest request) {
@@ -35,6 +38,7 @@ public class DemoAnnoController {
         return "url:" + request.getRequestURI() + " can access,obj id:" + obj.getId() + " obj name:" + obj.getName();
     }
 
+    //方法映射
     @RequestMapping(value = {"/dm1","/dm2"},produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String dynamicMapping(HttpServletRequest request) {
